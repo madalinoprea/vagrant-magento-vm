@@ -1,3 +1,5 @@
 atlassian-ide-plugin.xml
 magento_vagrant.iml
 .idea
+# Exclude magento - this will be downloaded via Vagrant
+magento/
