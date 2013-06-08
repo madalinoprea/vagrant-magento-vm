@@ -8,6 +8,7 @@ Vagrant.configure("2") do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
+  config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
@@ -20,7 +21,7 @@ Vagrant.configure("2") do |config|
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  # config.vm.network :private_network, ip: "192.168.33.10"
+  config.vm.network :private_network, ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -32,19 +33,19 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
+  # For lucky people use nfs
+  config.vm.synced_folder ".", "/vagrant", :extra => 'dmode=777,fmode=777'
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
-  #
-  # config.vm.provider :virtualbox do |vb|
-  #   # Don't boot with headless mode
-  #   vb.gui = true
-  #
-  #   # Use VBoxManage to customize the VM. For example to change memory:
-  #   vb.customize ["modifyvm", :id, "--memory", "1024"]
-  # end
-  #
+ 
+  config.vm.provider :virtualbox do |vb|
+  
+    # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "2048"]
+  end
+  
   # View the documentation for the provider you're using for more
   # information on available options.
 
@@ -54,38 +55,36 @@ Vagrant.configure("2") do |config|
   # some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "./recipes/cookbooks"
-    chef.roles_path = "./recipes/roles"
-    chef.data_bags_path = "./recipes/data_bags"
-    chef.add_recipe "mysql"
-    chef.add_role "web"
-  
-    # You may also specify custom JSON attributes:
-    chef.json = { :mysql_password => "foo" }
+    # Specify vagrant cookbooks: our project cookbooks and magento required cookbooks
+    chef.cookbooks_path = ["./myrecipes/cookbooks", "./recipes/cookbooks",]
+    #chef.roles_path = "./recipes/roles"
+    #chef.data_bags_path = "./recipes/data_bags"
+    chef.add_recipe "vagrant_magento"
 
-    # Add Magento specific configurations
+    # You may also specify custom JSON attributes:
+    chef.json = { 
+        'vagrant_magento' => {
+            'config' => {
+                'install' => true,
+            },
+            'source' => {
+                'install' => true,
+                # TODO: add proper urls where magento can be downloaded from
+                'url' => 'http://192.168.56.1',
+                'version' => 'magento-1.7.0.2',
+            },
+            'phpinfo_enabled' => true,
+            'mage_check_enabled' => true,
+            'sample_data' => {
+                'install' => false,
+                'version' => '1.6.1.0',
+            },
+        },
+    }
+    chef.log_level = :debug
+
+    # Add specific configurations for Magento Version
+    
   end
 
-  # Enable provisioning with chef server, specifying the chef server URL,
-  # and the path to the validation key (relative to this Vagrantfile).
-  #
-  # The Opscode Platform uses HTTPS. Substitute your organization for
-  # ORGNAME in the URL and validation key.
-  #
-  # If you have your own Chef Server, use the appropriate URL, which may be
-  # HTTP instead of HTTPS depending on your configuration. Also change the
-  # validation key to validation.pem.
-  #
-  # config.vm.provision :chef_client do |chef|
-  #   chef.chef_server_url = "https://api.opscode.com/organizations/ORGNAME"
-  #   chef.validation_key_path = "ORGNAME-validator.pem"
-  # end
-  #
-  # If you're using the Opscode platform, your validator client is
-  # ORGNAME-validator, replacing ORGNAME with your organization name.
-  #
-  # If you have your own Chef Server, the default validation client name is
-  # chef-validator, unless you changed the configuration.
-  #
-  #   chef.validation_client_name = "ORGNAME-validator"
 end
