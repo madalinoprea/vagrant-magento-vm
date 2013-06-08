@@ -1,0 +1,42 @@
+[submodule "recipes/cookbooks/vagrant_magento"]
+	path = recipes/cookbooks/vagrant_magento
+	url = https://github.com/madalinoprea/vagrant_magento.git
+[submodule "recipes/cookbooks/apache2"]
+	path = recipes/cookbooks/apache2
+	url = https://github.com/opscode-cookbooks/apache2
+[submodule "recipes/cookbooks/apt"]
+	path = recipes/cookbooks/apt
+	url = https://github.com/opscode-cookbooks/apt
+[submodule "recipes/cookbooks/build-essential"]
+	path = recipes/cookbooks/build-essential
+	url = https://github.com/opscode-cookbooks/build-essential
+[submodule "recipes/cookbooks/chef_handler"]
+	path = recipes/cookbooks/chef_handler
+	url = https://github.com/opscode-cookbooks/chef_handler
+[submodule "recipes/cookbooks/database"]
+	path = recipes/cookbooks/database
+	url = https://github.com/opscode-cookbooks/database
+[submodule "recipes/cookbooks/git"]
+	path = recipes/cookbooks/git
+	url = https://github.com/opscode-cookbooks/git
+[submodule "recipes/cookbooks/mysql"]
+	path = recipes/cookbooks/mysql
+	url = https://github.com/opscode-cookbooks/mysql
+[submodule "recipes/cookbooks/openssl"]
+	path = recipes/cookbooks/openssl
+	url = https://github.com/opscode-cookbooks/openssl
+[submodule "recipes/cookbooks/php"]
+	path = recipes/cookbooks/php
+	url = https://github.com/opscode-cookbooks/php
+[submodule "recipes/cookbooks/windows"]
+	path = recipes/cookbooks/windows
+	url = https://github.com/opscode-cookbooks/windows
+[submodule "recipes/cookbooks/runit"]
+	path = recipes/cookbooks/runit
+	url = https://github.com/opscode-cookbooks/runit
+[submodule "recipes/cookbooks/memcached"]
+	path = recipes/cookbooks/memcached
+	url = https://github.com/opscode-cookbooks/memcached
+[submodule "recipes/cookbooks/vim"]
+	path = recipes/cookbooks/vim
+	url = https://github.com/opscode-cookbooks/vim
