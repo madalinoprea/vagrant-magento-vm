@@ -68,13 +68,8 @@ Vagrant.configure("2") do |config|
                 'install' => true,
             },
             'source' => {
-                'install' => true,
-                # TODO: add proper urls where magento can be downloaded from
-                'url' => 'http://192.168.56.1',
-                'version' => 'magento-1.7.0.2',
+                'version' => 'magento-1.8.0.0-alpha1',
             },
-            'phpinfo_enabled' => true,
-            'mage_check_enabled' => true,
             'sample_data' => {
                 'install' => false,
                 'version' => '1.6.1.0',
