@@ -54,8 +54,13 @@ Vagrant.configure("2") do |config|
                 'install' => true,
                 'version' => '1.6.1.0',
             },
+            # Sets MAGE_IS_DEVELOPER_MODE (error reporting)
             'mage_dev_enabled' => true,
-            'phpinfo_enabled' => true,
+
+            # Install Magneto Debug
+            'debug' => {
+                'enabled' => true,
+            }
         },
     }
     #chef.log_level = :debug
