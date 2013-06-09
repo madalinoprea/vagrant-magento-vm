@@ -3,3 +3,4 @@ magento_vagrant.iml
 .idea
 # Exclude magento - this will be downloaded via Vagrant
 magento/
+.vagrant/
