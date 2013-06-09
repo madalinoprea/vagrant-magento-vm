@@ -24,7 +24,7 @@ Credentials (configurable via chef):
 |       | User  | Password |
 | ----- | ------| -------- |
 | MySQL | root  | root     |
-| Admin | admin | m123m123 |
+| Admin | admin | m123123 |
 
 
 
