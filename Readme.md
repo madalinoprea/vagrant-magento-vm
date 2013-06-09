@@ -6,8 +6,8 @@ Tested for 1.8 alpha and 1.7 with sample data.
 
 Setup Instructions
 -------------------
-Install Virtual Box: https://www.virtualbox.org/wiki/Downloads
-Install Vagrant for your platform: http://downloads.vagrantup.com/
+ * Install Virtual Box: https://www.virtualbox.org/wiki/Downloads
+ * Install Vagrant for your platform: http://downloads.vagrantup.com/
 
 ```bash
 # Clone this git repo
