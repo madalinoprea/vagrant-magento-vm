@@ -4,3 +4,4 @@ magento_vagrant.iml
 # Exclude magento - this will be downloaded via Vagrant
 magento/
 .vagrant/
+archives/
