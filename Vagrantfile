@@ -9,6 +9,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "precise64"
   config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
+  config.omnibus.chef_version = "11.4.0"
 
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
@@ -42,17 +43,21 @@ Vagrant.configure("2") do |config|
     chef.add_recipe "vagrant_magento"
 
     # You may also specify custom JSON attributes:
-    chef.json = { 
+    chef.json = {
         'vagrant_magento' => {
             'config' => {
                 'install' => true,
             },
             'source' => {
-                'version' => 'magento-1.8.0.0-alpha1',
+                'version' => 'enterprise-1.12.0.0',
+                'url' => 'file:///vagrant/archives',
+                'type' => 'tar.gz',
             },
             'sample_data' => {
                 'install' => true,
-                'version' => '1.6.1.0',
+                'version' => '1.11.2.0',
+                'url' => 'file:///vagrant/archives',
+                'type' => 'tgz'
             },
             # Sets MAGE_IS_DEVELOPER_MODE (error reporting)
             'mage_dev_enabled' => true,

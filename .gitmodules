@@ -40,3 +40,21 @@
 [submodule "recipes/cookbooks/vim"]
 	path = recipes/cookbooks/vim
 	url = https://github.com/opscode-cookbooks/vim
+[submodule "recipes/cookbooks/aws"]
+	path = recipes/cookbooks/aws
+	url = https://github.com/opscode-cookbooks/aws.git
+[submodule "recipes/cookbooks/postgresql"]
+	path = recipes/cookbooks/postgresql
+	url = https://github.com/opscode-cookbooks/postgresql.git
+[submodule "recipes/cookbooks/xfs"]
+	path = recipes/cookbooks/xfs
+	url = https://github.com/opscode-cookbooks/xfs.git
+[submodule "recipes/cookbooks/dmg"]
+	path = recipes/cookbooks/dmg
+	url = https://github.com/opscode-cookbooks/dmg.git
+[submodule "recipes/cookbooks/yum"]
+	path = recipes/cookbooks/yum
+	url = https://github.com/opscode-cookbooks/yum.git
+[submodule "recipes/cookbooks/xml"]
+	path = recipes/cookbooks/xml
+	url = https://github.com/opscode-cookbooks/xml.git
