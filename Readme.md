@@ -18,22 +18,6 @@ By default, Magento's url is magento.local and vm's ip is192.168.33.10. Please c
 192.168.33.10 magento.local
 ```
 
-Known Issues
---------------------
-Not sure why sample data is not downloaded when provisioning is run for the first time.
-```
-[2013-06-09T03:31:00+00:00] INFO: Processing remote_file[/tmp/vagrant-chef-1/magento-sample-data-1.6.1.0.tar.bz2] action run (vagrant_magento::default line 129)
-
-================================================================================
-Error executing action `run` on resource 'remote_file[/tmp/vagrant-chef-1/magento-sample-data-1.6.1.0.tar.bz2]'
-================================================================================
-
-NameError
----------
-Cannot find a resource for action_run on ubuntu version 12.04
-```
-Workaround, re-run vagrant provision: `vagrant provision`
-
 
 
 Configuration Options
