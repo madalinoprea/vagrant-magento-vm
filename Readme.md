@@ -1,5 +1,7 @@
 
 TODO:
-1. Add support for secure domains
-2. Add support for xdebug
-3. Add support for Magento Enterprise
+ - Add support to enable Magento Developer Mode
+ - Add support for secure domains
+ - Add support for xdebug
+ - Add support for Magento Enterprise
+ - Add index for http://magentoversions.appspot.com to see available magento versions
