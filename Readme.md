@@ -1,5 +1,13 @@
+Goal
+------------------
+Create a Vagrant configuration that offers ability to install different versions of Magento with minimum effort.
+
+Tested for 1.8 alpha and 1.7 with sample data.
+
 Setup Instructions
 -------------------
+ * Install Virtual Box: https://www.virtualbox.org/wiki/Downloads
+ * Install Vagrant for your platform: http://downloads.vagrantup.com/
 
 ```bash
 # Clone this git repo
@@ -60,6 +68,7 @@ are available:
 
  * magento-1.4.2.0
  * magento-1.5.1.0
+ * magento-1.6.2.0
  * magento-1.7.0.2
  * magento-1.8.0.0-alpha1 (default)
 
