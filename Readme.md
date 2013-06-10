@@ -58,6 +58,8 @@ Configuration Options
 <dt>vagrant_magento.debug.enabled</dt>
 <dd>Installs Magneto Debug. Default: true</dd>
 
+<dt>vagrant_magento.n98-magerun.enabled</dt>
+<dd>Installs n98-magerun cli tools for Magento from https://github.com/netz98/n98-magerun. Default: true</dd>
 </dl>
 
 Available versions
