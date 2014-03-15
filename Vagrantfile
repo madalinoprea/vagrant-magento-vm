@@ -25,7 +25,7 @@ Vagrant.configure("2") do |config|
   # config.vm.network :public_network
 
   # Lucky people can enable nfs but they will get permission errors https://groups.google.com/forum/?fromgroups=#!topic/vagrant-up/-J3UEqYXveA
-  config.vm.synced_folder ".", "/vagrant", :extra => 'dmode=777,fmode=777'
+  config.vm.synced_folder ".", "/vagrant", :mount_options => ['dmode=777', 'fmode=777']
 
   config.vm.provider :virtualbox do |vb|
   
